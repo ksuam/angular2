@@ -1,0 +1,17 @@
+<div>
+
+  <H1>hola</H1>
+  <ul>
+    <!-- <li *ngFor="let message of messagesService.message">
+      {{message}}
+      <h1>hola</h1> -->
+    <!-- </li> -->
+
+    @for (message of messagesService.messages; track $index) {
+      <li>
+        {{message}}
+      </li>
+    }
+  </ul>
+</div>
+

@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body mt-5">
+    <form [formGroup]="formUser" (ngSubmit)="procesar()">
+      <div class="mb-2">
+        <label class="form-label">Nombre</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Por favor ingrese su nombre"
+        />
+
+        <div class="alert alert-danger mt-2 " [hidden]="name.value || name.pristine">
+          El nombre es obligatorio
+        </div>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder=""
+        /></div>
+
+        <div class="alert alert-danger mt-2" [hidden]="email.value || email.pristine">
+          <span *ngIf="email.errors?.['required']">
+            El email es obligatorio
+
+          </span>
+
+          <span *ngIf="email.errors?.['email']">
+            El email debe ser valido
+          </span>
+        </div>
+
+
+      <button class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+  <!-- {{email.errors}} -->
+  {{ formUser.get("name")?.value }}
+</div>
