@@ -1,40 +1,23 @@
 import { Routes , RouterModule} from '@angular/router';
-import { HomeComponent } from './home/home.component';
+
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-export const routes: Routes = [{
-  path:'',
-  component: HomeComponent
-},
-{
-  path:'home',
-  component:HomeComponent
-},
-{
-  path: 'contact',
-  component:ContactComponent
-},
-{
-  path:'about',
-  component:AboutComponent
-},
-{
-  path: '**',
-  component: PageNotFoundComponent
-}
-]
+import { CoursesComponent } from './courses/courses.component';
+import { CoursesDetailComponent } from './courses-detail/courses-detail.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
 
 @NgModule({
 declarations: [],
 imports: [
   CommonModule,
-  HomeComponent,
   ContactComponent,
   AboutComponent
 ]
 })
+
+
 export class AppModule { }
